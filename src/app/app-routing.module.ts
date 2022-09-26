@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'main',
     loadChildren: () =>
       import('./shared/modules/main/main.module').then((m) => m.MainModule),
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'main',
   },
 ];
 
