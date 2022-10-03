@@ -6,6 +6,17 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+    children: [
+      {
+        path: 'cipher',
+        loadChildren: () =>
+          import('../cipher/cipher.module').then((m) => m.CihperModule),
+      },
+    ],
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 
