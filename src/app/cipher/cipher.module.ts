@@ -6,9 +6,10 @@ import { InputComponent } from './caesar-cipher-form/input/input.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { OutputComponent } from './caesar-cipher-form/output/output.component';
 import { ButtonModule } from 'primeng/button';
+import { CiphersPanelComponent } from './caesar-cipher-form/ciphers-panel/ciphers-panel.component';
 
 @NgModule({
-  declarations: [CaesarCipherFormComponent, InputComponent, OutputComponent],
+  declarations: [CaesarCipherFormComponent, InputComponent, OutputComponent, CiphersPanelComponent],
   imports: [CommonModule, CipherRoutingModule, InputTextModule, ButtonModule],
 })
 export class CihperModule {}
