@@ -1,11 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from '../../components/main/main.component';
+import { MainComponent } from './component/main.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+    children: [
+      {
+        path: 'cipher',
+        loadChildren: () =>
+          import('../cipher/cipher.module').then((m) => m.CihperModule),
+      },
+    ],
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 

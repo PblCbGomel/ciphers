@@ -1,1 +1,14 @@
-<p>settings works!</p>
+<button
+  pButton
+  type="button"
+  icon="pi pi-bars"
+  (click)="menu.toggle($event)"
+  #btn
+></button>
+<p-slideMenu
+  [popup]="true"
+  [model]="items"
+  #menu
+  [viewportHeight]="160"
+  [style]="{ 'min-width': '190px' }"
+></p-slideMenu>
