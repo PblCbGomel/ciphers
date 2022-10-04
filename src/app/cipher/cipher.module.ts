@@ -4,9 +4,10 @@ import { CaesarCipherFormComponent } from './caesar-cipher-form/caesar-cipher-fo
 import { CipherRoutingModule } from './cipher-routing.module';
 import { InputComponent } from './caesar-cipher-form/input/input.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { OutputComponent } from './caesar-cipher-form/output/output.component';
 
 @NgModule({
-  declarations: [CaesarCipherFormComponent, InputComponent],
+  declarations: [CaesarCipherFormComponent, InputComponent, OutputComponent],
   imports: [CommonModule, CipherRoutingModule, InputTextModule],
 })
 export class CihperModule {}
