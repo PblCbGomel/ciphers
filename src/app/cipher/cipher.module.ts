@@ -7,6 +7,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CiphersPanelComponent } from './ciphers-panel/ciphers-panel.component';
 import { OutputComponent } from './output/output.component';
+import { MorseCipherFormComponent } from './morse-cipher-form/morse-cipher-form.component';
+import { TranspositionCipherFormComponent } from './transposition-cipher-form/transposition-cipher-form.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { OutputComponent } from './output/output.component';
     InputComponent,
     OutputComponent,
     CiphersPanelComponent,
+    MorseCipherFormComponent,
+    TranspositionCipherFormComponent,
   ],
   imports: [CommonModule, CipherRoutingModule, InputTextModule, ButtonModule],
 })
