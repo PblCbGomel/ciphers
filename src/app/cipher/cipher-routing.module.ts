@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CaesarCipherFormComponent } from './caesar-cipher-form/caesar-cipher-form.component';
+import { CiphersPanelComponent } from './ciphers-panel/ciphers-panel.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CaesarCipherFormComponent,
+    component: CiphersPanelComponent,
+    children: [{ path: 'caesar', component: CaesarCipherFormComponent }],
   },
 ];
 
