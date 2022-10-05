@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: CiphersPanelComponent,
-    children: [{ path: 'caesar', component: CaesarCipherFormComponent }],
+    children: [
+      { path: 'caesar', component: CaesarCipherFormComponent },
+      { path: 'morse', component: CaesarCipherFormComponent },
+      { path: 'transposition', component: CaesarCipherFormComponent },
+      { path: '**', redirectTo: '' },
+    ],
   },
 ];
 
