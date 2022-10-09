@@ -1,0 +1,42 @@
+<div
+  class="w-full h-full flex align-items-center justify-content-around flex-column"
+>
+  <span class="p-buttonset">
+    <button
+      pButton
+      type="button"
+      label="Caesar"
+      icon="pi pi-arrow-right-arrow-left"
+      [routerLink]="['caesar']"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Morse"
+      icon="pi pi-arrow-right-arrow-left"
+      [routerLink]="['morse']"
+    ></button>
+    <button
+      pButton
+      type="button"
+      label="Transposition"
+      icon="pi pi-arrow-right-arrow-left"
+      [routerLink]="['transposition']"
+    ></button>
+  </span>
+
+  <router-outlet></router-outlet>
+
+  <div class="w-4 flex align-items-center justify-content-between">
+    <p-button
+      class="p-button-lg"
+      icon="pi pi-arrow-right-arrow-left"
+      label="Encrypt"
+    ></p-button>
+    <p-button
+      class="p-button-lg"
+      icon="pi pi-arrow-right-arrow-left"
+      label="Descrypt"
+    ></p-button>
+  </div>
+</div>
