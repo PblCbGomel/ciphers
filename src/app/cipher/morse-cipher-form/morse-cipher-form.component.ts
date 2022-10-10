@@ -9,10 +9,10 @@ import { OutputComponent } from '../output/output.component';
   styleUrls: ['./morse-cipher-form.component.scss'],
 })
 export class MorseCipherFormComponent {
-  constructor(private cipherService: MorseCipherService) {}
-
   @ViewChild('input') private inputComponent: InputComponent;
   @ViewChild('output') private outputComponent: OutputComponent;
+
+  constructor(private cipherService: MorseCipherService) {}
 
   encrypt() {}
 

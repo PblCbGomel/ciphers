@@ -10,6 +10,7 @@ import { OutputComponent } from './output/output.component';
 import { MorseCipherFormComponent } from './morse-cipher-form/morse-cipher-form.component';
 import { TranspositionCipherFormComponent } from './transposition-cipher-form/transposition-cipher-form.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
     InputTextModule,
     ButtonModule,
     FormsModule,
+    HttpClientModule,
   ],
 })
 export class CihperModule {}
