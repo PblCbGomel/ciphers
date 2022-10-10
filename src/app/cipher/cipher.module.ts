@@ -9,6 +9,7 @@ import { CiphersPanelComponent } from './ciphers-panel/ciphers-panel.component';
 import { OutputComponent } from './output/output.component';
 import { MorseCipherFormComponent } from './morse-cipher-form/morse-cipher-form.component';
 import { TranspositionCipherFormComponent } from './transposition-cipher-form/transposition-cipher-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,12 @@ import { TranspositionCipherFormComponent } from './transposition-cipher-form/tr
     MorseCipherFormComponent,
     TranspositionCipherFormComponent,
   ],
-  imports: [CommonModule, CipherRoutingModule, InputTextModule, ButtonModule],
+  imports: [
+    CommonModule,
+    CipherRoutingModule,
+    InputTextModule,
+    ButtonModule,
+    FormsModule,
+  ],
 })
 export class CihperModule {}
