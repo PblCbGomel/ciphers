@@ -14,7 +14,15 @@ export class MorseCipherFormComponent {
 
   constructor(private cipherService: MorseCipherService) {}
 
-  encrypt() {}
+  encrypt() {
+    this.outputComponent.value = this.cipherService.encrypt(
+      this.inputComponent.value
+    );
+  }
 
-  descrypt() {}
+  descrypt() {
+    this.inputComponent.value = this.cipherService.descrypt(
+      this.outputComponent.value
+    );
+  }
 }

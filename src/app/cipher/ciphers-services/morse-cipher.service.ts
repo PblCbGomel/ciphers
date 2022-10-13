@@ -5,7 +5,8 @@ import { CipherServices } from './cipher.interface';
   providedIn: 'root',
 })
 export class MorseCipherService implements CipherServices {
-  public alphabet: Map<String, String>;
+  private alphabet: Map<string, string>;
+  private reverseAlphabet: Map<string, string>;
 
   constructor() {
     this.alphabet = new Map([
@@ -45,14 +46,29 @@ export class MorseCipherService implements CipherServices {
       ['7', '--...'],
       ['8', '---..'],
       ['9', '----.'],
+      [' ', ' '],
     ]);
+
+    this.reverseAlphabet = new Map(
+      Object.entries(Object.fromEntries(this.alphabet)).map(([key, value]) => [
+        value,
+        key,
+      ])
+    );
   }
 
-  encrypt(str: String): String {
-    return '';
+  encrypt(str: string): string {
+    return str
+      .split('')
+      .map((symbol) => this.alphabet.get(symbol))
+      .join('');
   }
 
-  descrypt(str: String): String {
-    return '';
+  descrypt(str: string): string {
+    console.log(this.reverseAlphabet);
+    return str
+      .split(' ')
+      .map((symbol) => this.reverseAlphabet.get(symbol))
+      .join(' ');
   }
 }

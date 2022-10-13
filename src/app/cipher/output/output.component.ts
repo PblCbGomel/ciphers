@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./output.component.scss'],
 })
 export class OutputComponent {
-  public value: String = '';
+  public value: string = '';
 }
