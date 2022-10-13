@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Output, ViewChild } from '@angular/core';
 import { MorseCipherService } from '../ciphers-services/morse-cipher.service';
 import { InputComponent } from '../input/input.component';
 import { OutputComponent } from '../output/output.component';
