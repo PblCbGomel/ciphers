@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./caesar-cipher-form.component.scss'],
 })
 export class CaesarCipherFormComponent implements OnInit {
-  constructor() {}
+  public shiftValue: number;
+
+  constructor() {
+    this.shiftValue = 1;
+  }
 
   ngOnInit(): void {}
 }

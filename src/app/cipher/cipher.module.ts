@@ -12,6 +12,7 @@ import { TranspositionCipherFormComponent } from './transposition-cipher-form/tr
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { DialogModule } from 'primeng/dialog';
     FormsModule,
     HttpClientModule,
     DialogModule,
+    InputNumberModule,
   ],
 })
 export class CihperModule {}

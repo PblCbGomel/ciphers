@@ -1,6 +1,17 @@
 <app-input class="w-7"></app-input>
 <app-output class="w-7"></app-output>
 
+<div>
+  <label class="mr-3">Shift:</label>
+  <p-inputNumber
+    [showButtons]="true"
+    [(ngModel)]="shiftValue"
+    [min]="1"
+    [max]="30"
+  >
+  </p-inputNumber>
+</div>
+
 <div class="w-4 flex align-items-center justify-content-between">
   <p-button
     class="p-button-lg"
