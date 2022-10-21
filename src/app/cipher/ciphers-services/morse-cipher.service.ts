@@ -60,15 +60,23 @@ export class MorseCipherService implements CipherServices {
   encrypt(str: string): string {
     return str
       .split('')
-      .map((symbol) => this.alphabet.get(symbol))
-      .join('');
+      .map(
+        (symbol) =>
+          this.alphabet.get(symbol.toLocaleUpperCase()) ||
+          symbol.toLocaleUpperCase()
+      )
+      .join(' ');
   }
 
   descrypt(str: string): string {
     console.log(this.reverseAlphabet);
     return str
       .split(' ')
-      .map((symbol) => this.reverseAlphabet.get(symbol))
+      .map(
+        (symbol) =>
+          this.reverseAlphabet.get(symbol.toLocaleUpperCase()) ||
+          symbol.toLocaleUpperCase()
+      )
       .join(' ');
   }
 }
