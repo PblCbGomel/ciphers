@@ -1,4 +1,4 @@
 export interface CipherServices {
-  encrypt(str: String): String;
-  descrypt(str: String): String;
+  encrypt(str: string, num: number): string;
+  descrypt(str: string, num: number): string;
 }

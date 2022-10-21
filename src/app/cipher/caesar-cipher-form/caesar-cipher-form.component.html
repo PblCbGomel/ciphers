@@ -1,5 +1,5 @@
-<app-input class="w-7"></app-input>
-<app-output class="w-7"></app-output>
+<app-input class="w-7" #input></app-input>
+<app-output class="w-7" #output></app-output>
 
 <div>
   <label class="mr-3">Shift:</label>
@@ -17,10 +17,12 @@
     class="p-button-lg"
     icon="pi pi-arrow-right-arrow-left"
     label="Encrypt"
+    (click)="encrypt()"
   ></p-button>
   <p-button
     class="p-button-lg"
     icon="pi pi-arrow-right-arrow-left"
     label="Descrypt"
+    (click)="descrypt()"
   ></p-button>
 </div>
