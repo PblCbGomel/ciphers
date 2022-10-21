@@ -6,7 +6,29 @@
   type="button"
   label="Alphabet"
   icon="pi pi-file-word"
+  (click)="showAlphabet()"
 ></button>
+
+<p-dialog
+  header="Alphabet"
+  [(visible)]="displayAlphabet"
+  [modal]="true"
+  class="max-w-10rem"
+  [draggable]="false"
+  [resizable]="false"
+>
+  <p *ngFor="let letter of alphabet | keyvalue">
+    {{ letter.key }} --> {{ letter.value }}
+  </p>
+  <ng-template pTemplate="footer">
+    <p-button
+      icon="pi pi-check"
+      (click)="displayAlphabet = false"
+      label="Ok"
+      styleClass="p-button-text"
+    ></p-button>
+  </ng-template>
+</p-dialog>
 
 <div class="w-4 flex align-items-center justify-content-between">
   <p-button

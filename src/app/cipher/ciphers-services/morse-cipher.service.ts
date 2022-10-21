@@ -46,7 +46,6 @@ export class MorseCipherService implements CipherServices {
       ['7', '--...'],
       ['8', '---..'],
       ['9', '----.'],
-      [' ', ' '],
     ]);
 
     this.reverseAlphabet = new Map(
@@ -78,5 +77,9 @@ export class MorseCipherService implements CipherServices {
           symbol.toLocaleUpperCase()
       )
       .join(' ');
+  }
+
+  getAlphabet() {
+    return this.alphabet;
   }
 }

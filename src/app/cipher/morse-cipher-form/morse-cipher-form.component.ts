@@ -12,7 +12,18 @@ export class MorseCipherFormComponent {
   @ViewChild('input') private inputComponent: InputComponent;
   @ViewChild('output') private outputComponent: OutputComponent;
 
-  constructor(private cipherService: MorseCipherService) {}
+  public displayAlphabet: boolean;
+
+  public alphabet: Map<string, string>;
+
+  constructor(private cipherService: MorseCipherService) {
+    this.displayAlphabet = false;
+    this.alphabet = cipherService.getAlphabet();
+  }
+
+  showAlphabet() {
+    this.displayAlphabet = !this.displayAlphabet;
+  }
 
   encrypt() {
     this.outputComponent.value = this.cipherService.encrypt(
