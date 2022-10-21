@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-output',
   templateUrl: './output.component.html',
-  styleUrls: ['./output.component.scss']
+  styleUrls: ['./output.component.scss'],
 })
-export class OutputComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class OutputComponent {
+  public value: string = '';
 }
