@@ -17,9 +17,13 @@
   [draggable]="false"
   [resizable]="false"
 >
-  <p *ngFor="let letter of alphabet | keyvalue">
-    {{ letter.key }} --> {{ letter.value }}
-  </p>
+  <div class="flex flex-column align-items-center text-align-center">
+    <p *ngFor="let letter of alphabet | keyvalue">
+      {{ letter.key }} --> {{ letter.value }}
+    </p>
+    <p>' ' --> '&nbsp;&nbsp;'</p>
+  </div>
+
   <ng-template pTemplate="footer">
     <p-button
       icon="pi pi-check"

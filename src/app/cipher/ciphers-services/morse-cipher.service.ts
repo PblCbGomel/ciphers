@@ -69,14 +69,25 @@ export class MorseCipherService implements CipherServices {
 
   descrypt(str: string): string {
     console.log(this.reverseAlphabet);
-    return str
+    str = str
       .split(' ')
-      .map(
-        (symbol) =>
+      .map((symbol) => {
+        if (symbol === '') {
+          symbol = ' ';
+        }
+
+        return (
           this.reverseAlphabet.get(symbol.toLocaleUpperCase()) ||
           symbol.toLocaleUpperCase()
-      )
-      .join(' ');
+        );
+      })
+      .join('');
+
+    while (str.includes('  ')) {
+      str = str.replace('  ', ' ');
+    }
+
+    return str;
   }
 
   getAlphabet() {
