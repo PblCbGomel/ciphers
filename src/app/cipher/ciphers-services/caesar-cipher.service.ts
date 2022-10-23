@@ -5,17 +5,41 @@ import { CipherServices } from './cipher.interface';
   providedIn: 'root',
 })
 export class CaesarCipherService implements CipherServices {
-  public number: Number;
+  encrypt(str: string, num: number): string {
+    return str
+      .toLocaleUpperCase()
+      .split('')
+      .map((letter) => {
+        let charCode: number = letter.charCodeAt(0);
 
-  constructor() {
-    this.number = 1;
+        if (charCode >= 65 && charCode <= 90) {
+          charCode += num;
+          if (charCode > 90) {
+            charCode -= 26;
+          }
+        }
+
+        return String.fromCharCode(charCode);
+      })
+      .join('');
   }
 
-  encrypt(str: String): String {
-    return '';
-  }
+  descrypt(str: string, num: number): string {
+    return str
+      .toLocaleUpperCase()
+      .split('')
+      .map((letter) => {
+        let charCode: number = letter.charCodeAt(0);
 
-  descrypt(str: String): String {
-    return '';
+        if (charCode >= 65 && charCode <= 90) {
+          charCode -= num;
+          if (charCode < 65) {
+            charCode += 26;
+          }
+        }
+
+        return String.fromCharCode(charCode);
+      })
+      .join('');
   }
 }
