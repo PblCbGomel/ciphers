@@ -7,11 +7,11 @@ import { CipherServices } from './cipher.interface';
 export class TranspositionCipherService implements CipherServices {
   constructor() {}
 
-  encrypt(str: String): String {
+  encrypt(str: string, num: number): string {
     return '';
   }
 
-  descrypt(str: String): String {
+  descrypt(str: string, num: number): string {
     return '';
   }
 }

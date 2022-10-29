@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { InputComponent } from '../input/input.component';
+import { OutputComponent } from '../output/output.component';
 
 @Component({
   selector: 'app-transposition-cipher-form',
   templateUrl: './transposition-cipher-form.component.html',
-  styleUrls: ['./transposition-cipher-form.component.scss']
+  styleUrls: ['./transposition-cipher-form.component.scss'],
 })
-export class TranspositionCipherFormComponent implements OnInit {
+export class TranspositionCipherFormComponent {
+  @ViewChild('input') private inputComponent: InputComponent;
+  @ViewChild('output') private outputComponent: OutputComponent;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  encrypt() {}
 
+  descrypt() {}
 }
