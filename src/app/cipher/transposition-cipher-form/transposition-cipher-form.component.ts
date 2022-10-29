@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { TranspositionCipherService } from '../ciphers-services/transposition-cipher.service';
 import { InputComponent } from '../input/input.component';
 import { OutputComponent } from '../output/output.component';
 
@@ -11,9 +12,17 @@ export class TranspositionCipherFormComponent {
   @ViewChild('input') private inputComponent: InputComponent;
   @ViewChild('output') private outputComponent: OutputComponent;
 
-  constructor() {}
+  constructor(private cipherService: TranspositionCipherService) {}
 
-  encrypt() {}
+  encrypt() {
+    this.outputComponent.value = this.cipherService.encrypt(
+      this.inputComponent.value
+    );
+  }
 
-  descrypt() {}
+  descrypt() {
+    this.inputComponent.value = this.cipherService.descrypt(
+      this.outputComponent.value
+    );
+  }
 }
