@@ -8,6 +8,7 @@
       label="Caesar"
       icon="pi pi-arrow-right-arrow-left"
       [routerLink]="['caesar']"
+      (click)="openCipher()"
     ></button>
     <button
       pButton
@@ -15,6 +16,7 @@
       label="Morse"
       icon="pi pi-arrow-right-arrow-left"
       [routerLink]="['morse']"
+      (click)="openCipher()"
     ></button>
     <button
       pButton
@@ -22,8 +24,11 @@
       label="Transposition"
       icon="pi pi-arrow-right-arrow-left"
       [routerLink]="['transposition']"
+      (click)="openCipher()"
     ></button>
   </span>
+
+  <h1 *ngIf="!someCipherIsOpen" class="text-5xl mb-5">Choose a cipher...</h1>
 
   <router-outlet></router-outlet>
 </div>
