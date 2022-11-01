@@ -46,6 +46,7 @@ export class SettingsComponent implements OnInit {
       {
         label: 'Close',
         icon: 'pi pi-fw pi-power-off',
+        routerLink: [''],
       },
     ];
   }

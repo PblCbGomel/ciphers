@@ -10,7 +10,6 @@ import { OutputComponent } from './output/output.component';
 import { MorseCipherFormComponent } from './morse-cipher-form/morse-cipher-form.component';
 import { TranspositionCipherFormComponent } from './transposition-cipher-form/transposition-cipher-form.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 
@@ -29,7 +28,6 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputTextModule,
     ButtonModule,
     FormsModule,
-    HttpClientModule,
     DialogModule,
     InputNumberModule,
   ],
