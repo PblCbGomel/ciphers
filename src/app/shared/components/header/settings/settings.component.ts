@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ThemeChangeService } from 'src/app/shared/services/change-theme.service';
 
 @Component({
   selector: 'app-settings',
@@ -8,6 +9,8 @@ import { MenuItem } from 'primeng/api';
 })
 export class SettingsComponent implements OnInit {
   public items: MenuItem[];
+
+  constructor(private themeService: ThemeChangeService) {}
 
   ngOnInit() {
     this.items = [
@@ -34,12 +37,16 @@ export class SettingsComponent implements OnInit {
           {
             label: 'Light',
             icon: 'pi pi-arrow-right-arrow-left',
-            command: (): void => {},
+            command: (): void => {
+              this.themeService.changeToLight();
+            },
           },
           {
             label: 'Dark',
             icon: 'pi pi-arrow-right-arrow-left',
-            command: (): void => {},
+            command: (): void => {
+              this.themeService.changeToDark();
+            },
           },
         ],
       },
