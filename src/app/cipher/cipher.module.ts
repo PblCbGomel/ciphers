@@ -15,6 +15,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { createTranslateLoader } from '../app.module';
+import { ChangeByLanguagePipe } from '../shared/pipes/language-input.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { createTranslateLoader } from '../app.module';
     CiphersPanelComponent,
     MorseCipherFormComponent,
     TranspositionCipherFormComponent,
+    ChangeByLanguagePipe,
   ],
   imports: [
     CommonModule,

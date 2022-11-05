@@ -3,7 +3,7 @@
     class="w-full text-3xl p-inputtext-lg"
     id="float-input"
     type="text"
-    [ngModel]="value | uppercase"
+    [ngModel]="value | changeByLanguage"
     (ngModelChange)="value = $event"
     pInputText
   />
