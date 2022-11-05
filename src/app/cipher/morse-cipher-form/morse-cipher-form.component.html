@@ -4,13 +4,13 @@
   pButton
   class="w-10rem h-3rem"
   type="button"
-  label="Alphabet"
+  label="{{ 'cipherPage.alphabet' | translate }}"
   icon="pi pi-file-word"
   (click)="showAlphabet()"
 ></button>
 
 <p-dialog
-  header="Alphabet"
+  header="{{ 'cipherPage.alphabet' | translate }}"
   [(visible)]="displayAlphabet"
   [modal]="true"
   class="max-w-10rem"
@@ -38,13 +38,13 @@
   <p-button
     class="p-button-lg"
     icon="pi pi-arrow-right-arrow-left"
-    label="Encrypt"
+    label="{{ 'cipherPage.encrypt' | translate }}"
     (click)="encrypt()"
   ></p-button>
   <p-button
     class="p-button-lg"
     icon="pi pi-arrow-right-arrow-left"
-    label="Descrypt"
+    label="{{ 'cipherPage.descrypt' | translate }}"
     (click)="descrypt()"
   ></p-button>
 </div>

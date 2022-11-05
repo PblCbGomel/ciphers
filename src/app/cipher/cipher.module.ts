@@ -12,6 +12,9 @@ import { TranspositionCipherFormComponent } from './transposition-cipher-form/tr
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { createTranslateLoader } from '../app.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,13 @@ import { InputNumberModule } from 'primeng/inputnumber';
     FormsModule,
     DialogModule,
     InputNumberModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
   ],
 })
 export class CihperModule {}

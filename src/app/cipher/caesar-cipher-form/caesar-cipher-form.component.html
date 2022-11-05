@@ -2,7 +2,7 @@
 <app-output class="w-7" #output></app-output>
 
 <div>
-  <label class="mr-3">Shift:</label>
+  <label class="mr-3">{{ "cipherPage.shift" | translate }}:</label>
   <p-inputNumber
     [showButtons]="true"
     [(ngModel)]="shiftValue"
@@ -16,13 +16,13 @@
   <p-button
     class="p-button-lg"
     icon="pi pi-arrow-right-arrow-left"
-    label="Encrypt"
+    label="{{ 'cipherPage.encrypt' | translate }}"
     (click)="encrypt()"
   ></p-button>
   <p-button
     class="p-button-lg"
     icon="pi pi-arrow-right-arrow-left"
-    label="Descrypt"
+    label="{{ 'cipherPage.descrypt' | translate }}"
     (click)="descrypt()"
   ></p-button>
 </div>
