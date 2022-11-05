@@ -16,13 +16,13 @@ export class ChangeByLanguagePipe implements PipeTransform {
     if (this.languageService.currentLang === 'en-US') {
       result = value
         .split('')
-        .filter((letter) => this.engAlphabet.includes(letter.toLowerCase()))
+        .filter((letter) => !this.ruAlphabet.includes(letter.toLowerCase()))
         .map((letter) => letter.toLocaleUpperCase())
         .join('');
     } else {
       result = value
         .split('')
-        .filter((letter) => this.ruAlphabet.includes(letter.toLowerCase()))
+        .filter((letter) => !this.engAlphabet.includes(letter.toLowerCase()))
         .map((letter) => letter.toLocaleUpperCase())
         .join('');
     }
