@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "language": {
+      "language": "Language",
+      "eng": "Eng",
+      "ru": "Ru"
+    },
+    "theme": {
+      "theme": "Theme",
+      "dark": "Dark",
+      "light": "Light"
+    },
+    "close": "Close"
+  },
+  "cipherPage": {
+    "choose": "Choose a cipher",
+    "morse": "Morse",
+    "caesar": "Caesar",
+    "transposition": "Transposition",
+    "shift": "Shift",
+    "encrypt": "Encrypt",
+    "descrypt": "Descrypt",
+    "textEncrypt": "Text to encrypt",
+    "textDescrypt": "Text to descrypt",
+    "alphabet": "Alphabet"
+  },
+  "welcomePage": {
+    "welcome": "Welcome to the cipher encoder",
+    "start": "Start"
+  }
+}
