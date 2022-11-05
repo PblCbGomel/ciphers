@@ -77,7 +77,6 @@ export class MorseCipherService implements CipherServices {
   }
 
   descrypt(str: string): string {
-    console.log(this.reverseAlphabet);
     str = str
       .split(' ')
       .map((symbol) => {
