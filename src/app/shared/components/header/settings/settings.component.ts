@@ -20,8 +20,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.translate.setDefaultLang('en-US');
-    this.translate.use('en-US');
+    this.translate.setDefaultLang(localStorage.getItem('lang') || 'en-US');
+    this.translate.use(localStorage.getItem('lang') || 'en-US');
 
     this.languageSubscription = this.translate.onLangChange.subscribe(() => {
       this.items = this.buildSettingsMenu();
@@ -39,6 +39,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
             icon: 'pi pi-fw pi-arrow-right-arrow-left',
             command: (): void => {
               this.translate.use('en-US');
+              localStorage.setItem('lang', 'en-US');
             },
           },
           {
@@ -46,6 +47,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
             icon: 'pi pi-fw pi-arrow-right-arrow-left',
             command: (): void => {
               this.translate.use('ru-RU');
+              localStorage.setItem('lang', 'ru-RU');
             },
           },
         ],
