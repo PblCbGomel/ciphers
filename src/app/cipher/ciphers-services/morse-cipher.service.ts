@@ -192,7 +192,7 @@ export class MorseCipherService implements CipherServices {
     return str;
   }
 
-  getAlphabet() {
+  getAlphabet(): Map<string, string> {
     return this.translateService.currentLang === 'en-US'
       ? this.alphabet
       : this.alphabetRu;

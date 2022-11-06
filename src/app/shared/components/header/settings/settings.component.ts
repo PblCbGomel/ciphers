@@ -19,7 +19,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     private themeService: ThemeChangeService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.translate.setDefaultLang(localStorage.getItem('lang') || 'en-US');
     this.translate.use(localStorage.getItem('lang') || 'en-US');
 

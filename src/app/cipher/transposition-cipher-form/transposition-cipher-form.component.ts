@@ -14,13 +14,13 @@ export class TranspositionCipherFormComponent {
 
   constructor(private cipherService: TranspositionCipherService) {}
 
-  encrypt() {
+  encrypt(): void {
     this.outputComponent.value = this.cipherService.encrypt(
       this.inputComponent.value
     );
   }
 
-  descrypt() {
+  descrypt(): void {
     this.inputComponent.value = this.cipherService.descrypt(
       this.outputComponent.value
     );

@@ -18,14 +18,14 @@ export class CaesarCipherFormComponent {
     this.shiftValue = 1;
   }
 
-  encrypt() {
+  encrypt(): void {
     this.outputComponent.value = this.cipherService.encrypt(
       this.inputComponent.value,
       this.shiftValue
     );
   }
 
-  descrypt() {
+  descrypt(): void {
     this.inputComponent.value = this.cipherService.descrypt(
       this.outputComponent.value,
       this.shiftValue
