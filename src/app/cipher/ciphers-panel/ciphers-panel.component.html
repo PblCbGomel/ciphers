@@ -8,7 +8,8 @@
       label="{{ 'cipherPage.caesar' | translate }}"
       icon="pi pi-arrow-right-arrow-left"
       [routerLink]="['caesar']"
-      (click)="openCipher()"
+      (click)="openCipher(); changeDisable(1)"
+      [disabled]="isBtn1Disable"
     ></button>
     <button
       pButton
@@ -16,7 +17,8 @@
       label="{{ 'cipherPage.morse' | translate }}"
       icon="pi pi-arrow-right-arrow-left"
       [routerLink]="['morse']"
-      (click)="openCipher()"
+      (click)="openCipher(); changeDisable(2)"
+      [disabled]="isBtn2Disable"
     ></button>
     <button
       pButton
@@ -24,7 +26,8 @@
       label="{{ 'cipherPage.transposition' | translate }}"
       icon="pi pi-arrow-right-arrow-left"
       [routerLink]="['transposition']"
-      (click)="openCipher()"
+      (click)="openCipher(); changeDisable(3)"
+      [disabled]="isBtn3Disable"
     ></button>
   </span>
 
