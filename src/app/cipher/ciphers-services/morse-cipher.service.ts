@@ -88,7 +88,7 @@ export class MorseCipherService implements CipherServices {
       ['Н', '-.'],
       ['О', '---'],
       ['П', '.--.'],
-      ['К', '.-.'],
+      ['К', '-.-'],
       ['Р', '.-.'],
       ['С', '...'],
       ['Т', '-'],
