@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-ciphers-panel',
@@ -29,7 +28,7 @@ export class CiphersPanelComponent implements OnInit {
     }
   }
 
-  changeDisable(num: number) {
+  changeDisable(num: number): void {
     if (num === 1) {
       this.isBtn1Disable = true;
       this.isBtn2Disable = false;

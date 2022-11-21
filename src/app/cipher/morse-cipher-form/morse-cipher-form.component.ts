@@ -27,18 +27,18 @@ export class MorseCipherFormComponent implements OnDestroy {
     this.displayAlphabet = false;
   }
 
-  showAlphabet() {
+  showAlphabet(): void {
     this.alphabet = this.cipherService.getAlphabet();
     this.displayAlphabet = !this.displayAlphabet;
   }
 
-  encrypt() {
+  encrypt(): void {
     this.outputComponent.value = this.cipherService.encrypt(
       this.inputComponent.value
     );
   }
 
-  descrypt() {
+  descrypt(): void {
     this.inputComponent.value = this.cipherService.descrypt(
       this.outputComponent.value
     );

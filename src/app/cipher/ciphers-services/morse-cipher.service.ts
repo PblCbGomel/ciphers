@@ -88,7 +88,7 @@ export class MorseCipherService implements CipherServices {
       ['Н', '-.'],
       ['О', '---'],
       ['П', '.--.'],
-      ['К', '.-.'],
+      ['К', '-.-'],
       ['Р', '.-.'],
       ['С', '...'],
       ['Т', '-'],
@@ -192,7 +192,7 @@ export class MorseCipherService implements CipherServices {
     return str;
   }
 
-  getAlphabet() {
+  getAlphabet(): Map<string, string> {
     return this.translateService.currentLang === 'en-US'
       ? this.alphabet
       : this.alphabetRu;
