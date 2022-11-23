@@ -1,11 +1,8 @@
-import { Component, OnDestroy, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ValidateInputByLanguage } from 'src/app/shared/validators/inputValidator';
 import { MorseCipherService } from '../ciphers-services/morse-cipher.service';
-import { InputComponent } from '../input/input.component';
-import { OutputComponent } from '../output/output.component';
 
 @Component({
   selector: 'app-morse-cipher-form',
@@ -21,10 +18,7 @@ export class MorseCipherFormComponent implements OnDestroy {
 
   private languageSubscription: Subscription = new Subscription();
 
-  constructor(
-    private translate: TranslateService,
-    private cipherService: MorseCipherService
-  ) {
+  constructor(private cipherService: MorseCipherService) {
     this.displayAlphabet = false;
     this.morseForm = new FormGroup({
       inputValue: new FormControl(null, ValidateInputByLanguage),

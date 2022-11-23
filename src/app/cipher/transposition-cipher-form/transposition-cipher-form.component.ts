@@ -1,7 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ValidateInputByLanguage } from 'src/app/shared/validators/inputValidator';
 import { TranspositionCipherService } from '../ciphers-services/transposition-cipher.service';
-import { InputComponent } from '../input/input.component';
-import { OutputComponent } from '../output/output.component';
 
 @Component({
   selector: 'app-transposition-cipher-form',
@@ -9,20 +9,28 @@ import { OutputComponent } from '../output/output.component';
   styleUrls: ['./transposition-cipher-form.component.scss'],
 })
 export class TranspositionCipherFormComponent {
-  @ViewChild('input') private inputComponent: InputComponent;
-  @ViewChild('output') private outputComponent: OutputComponent;
+  public transpositionForm: FormGroup;
 
-  constructor(private cipherService: TranspositionCipherService) {}
+  constructor(private cipherService: TranspositionCipherService) {
+    this.transpositionForm = new FormGroup({
+      inputValue: new FormControl(null, ValidateInputByLanguage),
+      outputValue: new FormControl(null, ValidateInputByLanguage),
+    });
+  }
 
   encrypt(): void {
-    this.outputComponent.value = this.cipherService.encrypt(
-      this.inputComponent.value
-    );
+    this.transpositionForm.patchValue({
+      outputValue: this.cipherService.encrypt(
+        this.transpositionForm.controls['inputValue'].value
+      ),
+    });
   }
 
   descrypt(): void {
-    this.inputComponent.value = this.cipherService.descrypt(
-      this.outputComponent.value
-    );
+    this.transpositionForm.patchValue({
+      inputValue: this.cipherService.descrypt(
+        this.transpositionForm.controls['outputValue'].value
+      ),
+    });
   }
 }
