@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ValidateInputByLanguage } from 'src/app/shared/validators/inputValidator';
 import { CaesarCipherService } from '../ciphers-services/caesar-cipher.service';
 import { InputComponent } from '../input/input.component';
 import { OutputComponent } from '../output/output.component';
@@ -9,26 +11,33 @@ import { OutputComponent } from '../output/output.component';
   styleUrls: ['./caesar-cipher-form.component.scss'],
 })
 export class CaesarCipherFormComponent {
-  @ViewChild('input') private inputComponent: InputComponent;
-  @ViewChild('output') private outputComponent: OutputComponent;
+  public caesarForm: FormGroup;
 
   public shiftValue: number;
 
   constructor(private cipherService: CaesarCipherService) {
     this.shiftValue = 1;
+    this.caesarForm = new FormGroup({
+      inputValue: new FormControl(null, ValidateInputByLanguage),
+      outputValue: new FormControl(null, ValidateInputByLanguage),
+    });
   }
 
   encrypt(): void {
-    this.outputComponent.value = this.cipherService.encrypt(
-      this.inputComponent.value,
-      this.shiftValue
-    );
+    this.caesarForm.patchValue({
+      outputValue: this.cipherService.encrypt(
+        this.caesarForm.controls['inputValue'].value,
+        this.shiftValue
+      ),
+    });
   }
 
   descrypt(): void {
-    this.inputComponent.value = this.cipherService.descrypt(
-      this.outputComponent.value,
-      this.shiftValue
-    );
+    this.caesarForm.patchValue({
+      inputValue: this.cipherService.descrypt(
+        this.caesarForm.controls['outputValue'].value,
+        this.shiftValue
+      ),
+    });
   }
 }

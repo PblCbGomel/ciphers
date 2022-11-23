@@ -1,7 +1,47 @@
-<app-input class="w-7" #input></app-input>
-<app-output class="w-7" #output></app-output>
+<form
+  [formGroup]="caesarForm"
+  class="h-full w-6 flex align-items-center justify-content-between flex-column"
+>
+  <span class="w-full p-float-label">
+    <input
+      class="w-full text-3xl p-inputtext-lg"
+      id="float-input"
+      type="text"
+      pInputText
+      formControlName="inputValue"
+    />
+    <label for="float-input">{{ "cipherPage.textEncrypt" | translate }}</label>
+  </span>
+  <span class="w-full p-float-label">
+    <input
+      class="w-full text-3xl p-inputtext-lg"
+      id="float-input"
+      type="text"
+      pInputText
+      formControlName="outputValue"
+    />
+    <label for="float-input">{{ "cipherPage.textDescrypt" | translate }}</label>
+  </span>
 
-<div>
+  <div class="w-9 flex align-items-center justify-content-between">
+    <p-button
+      class="p-button-lg"
+      icon="pi pi-arrow-right-arrow-left"
+      label="{{ 'cipherPage.encrypt' | translate }}"
+      (click)="encrypt()"
+      [disabled]="!caesarForm.valid"
+    ></p-button>
+    <p-button
+      class="p-button-lg"
+      icon="pi pi-arrow-right-arrow-left"
+      label="{{ 'cipherPage.descrypt' | translate }}"
+      (click)="descrypt()"
+      [disabled]="!caesarForm.valid"
+    ></p-button>
+  </div>
+</form>
+
+<div class="flex flex-column align-items-center">
   <label class="mr-3">{{ "cipherPage.shift" | translate }}:</label>
   <p-inputNumber
     [showButtons]="true"
@@ -10,19 +50,4 @@
     [max]="25"
   >
   </p-inputNumber>
-</div>
-
-<div class="w-4 flex align-items-center justify-content-between">
-  <p-button
-    class="p-button-lg"
-    icon="pi pi-arrow-right-arrow-left"
-    label="{{ 'cipherPage.encrypt' | translate }}"
-    (click)="encrypt()"
-  ></p-button>
-  <p-button
-    class="p-button-lg"
-    icon="pi pi-arrow-right-arrow-left"
-    label="{{ 'cipherPage.descrypt' | translate }}"
-    (click)="descrypt()"
-  ></p-button>
 </div>

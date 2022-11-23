@@ -1,5 +1,45 @@
-<app-input class="w-7" #input></app-input>
-<app-output class="w-7" #output></app-output>
+<form
+  [formGroup]="morseForm"
+  class="h-full w-6 flex align-items-center justify-content-between flex-column"
+>
+  <span class="w-full p-float-label">
+    <input
+      class="w-full text-3xl p-inputtext-lg"
+      id="float-input"
+      type="text"
+      pInputText
+      formControlName="inputValue"
+    />
+    <label for="float-input">{{ "cipherPage.textEncrypt" | translate }}</label>
+  </span>
+  <span class="w-full p-float-label">
+    <input
+      class="w-full text-3xl p-inputtext-lg"
+      id="float-input"
+      type="text"
+      pInputText
+      formControlName="outputValue"
+    />
+    <label for="float-input">{{ "cipherPage.textDescrypt" | translate }}</label>
+  </span>
+
+  <div class="w-9 flex align-items-center justify-content-between">
+    <p-button
+      class="p-button-lg"
+      icon="pi pi-arrow-right-arrow-left"
+      label="{{ 'cipherPage.encrypt' | translate }}"
+      (click)="encrypt()"
+      [disabled]="!morseForm.valid"
+    ></p-button>
+    <p-button
+      class="p-button-lg"
+      icon="pi pi-arrow-right-arrow-left"
+      label="{{ 'cipherPage.descrypt' | translate }}"
+      (click)="descrypt()"
+      [disabled]="!morseForm.valid"
+    ></p-button>
+  </div>
+</form>
 <button
   pButton
   class="w-10rem h-3rem"
@@ -33,18 +73,3 @@
     ></p-button>
   </ng-template>
 </p-dialog>
-
-<div class="w-4 flex align-items-center justify-content-between">
-  <p-button
-    class="p-button-lg"
-    icon="pi pi-arrow-right-arrow-left"
-    label="{{ 'cipherPage.encrypt' | translate }}"
-    (click)="encrypt()"
-  ></p-button>
-  <p-button
-    class="p-button-lg"
-    icon="pi pi-arrow-right-arrow-left"
-    label="{{ 'cipherPage.descrypt' | translate }}"
-    (click)="descrypt()"
-  ></p-button>
-</div>
