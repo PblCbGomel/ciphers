@@ -23,18 +23,20 @@
     <label for="float-input">{{ "cipherPage.textDescrypt" | translate }}</label>
   </span>
 
-  <div class="w-4 flex align-items-center justify-content-between">
+  <div class="w-9 flex align-items-center justify-content-between">
     <p-button
       class="p-button-lg"
       icon="pi pi-arrow-right-arrow-left"
       label="{{ 'cipherPage.encrypt' | translate }}"
       (click)="encrypt()"
+      [disabled]="!transpositionForm.valid"
     ></p-button>
     <p-button
       class="p-button-lg"
       icon="pi pi-arrow-right-arrow-left"
       label="{{ 'cipherPage.descrypt' | translate }}"
       (click)="descrypt()"
+      [disabled]="!transpositionForm.valid"
     ></p-button>
   </div>
 </form>
