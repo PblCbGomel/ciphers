@@ -9,7 +9,7 @@ import { CiphersPanelComponent } from './ciphers-panel/ciphers-panel.component';
 import { OutputComponent } from './output/output.component';
 import { MorseCipherFormComponent } from './morse-cipher-form/morse-cipher-form.component';
 import { TranspositionCipherFormComponent } from './transposition-cipher-form/transposition-cipher-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -33,6 +33,7 @@ import { ChangeByLanguagePipe } from '../shared/pipes/language-input.pipe';
     InputTextModule,
     ButtonModule,
     FormsModule,
+    ReactiveFormsModule,
     DialogModule,
     InputNumberModule,
     TranslateModule.forChild({

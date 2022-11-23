@@ -1,6 +1,8 @@
 import { Component, OnDestroy, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { ValidateInputByLanguage } from 'src/app/shared/validators/inputValidator';
 import { MorseCipherService } from '../ciphers-services/morse-cipher.service';
 import { InputComponent } from '../input/input.component';
 import { OutputComponent } from '../output/output.component';
@@ -11,12 +13,11 @@ import { OutputComponent } from '../output/output.component';
   styleUrls: ['./morse-cipher-form.component.scss'],
 })
 export class MorseCipherFormComponent implements OnDestroy {
-  @ViewChild('input') private inputComponent: InputComponent;
-  @ViewChild('output') private outputComponent: OutputComponent;
-
   public displayAlphabet: boolean;
 
   public alphabet: Map<string, string>;
+
+  public morseForm: FormGroup;
 
   private languageSubscription: Subscription = new Subscription();
 
@@ -25,6 +26,10 @@ export class MorseCipherFormComponent implements OnDestroy {
     private cipherService: MorseCipherService
   ) {
     this.displayAlphabet = false;
+    this.morseForm = new FormGroup({
+      inputValue: new FormControl(null, ValidateInputByLanguage),
+      outputValue: new FormControl(null, ValidateInputByLanguage),
+    });
   }
 
   showAlphabet(): void {
@@ -33,15 +38,19 @@ export class MorseCipherFormComponent implements OnDestroy {
   }
 
   encrypt(): void {
-    this.outputComponent.value = this.cipherService.encrypt(
-      this.inputComponent.value
-    );
+    this.morseForm.patchValue({
+      outputValue: this.cipherService.encrypt(
+        this.morseForm.controls['inputValue'].value
+      ),
+    });
   }
 
   descrypt(): void {
-    this.inputComponent.value = this.cipherService.descrypt(
-      this.outputComponent.value
-    );
+    this.morseForm.patchValue({
+      inputValue: this.cipherService.descrypt(
+        this.morseForm.controls['outputValue'].value
+      ),
+    });
   }
 
   ngOnDestroy(): void {
