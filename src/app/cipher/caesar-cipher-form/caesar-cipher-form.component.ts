@@ -1,9 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ValidateInputByLanguage } from 'src/app/shared/validators/inputValidator';
 import { CaesarCipherService } from '../ciphers-services/caesar-cipher.service';
-import { InputComponent } from '../input/input.component';
-import { OutputComponent } from '../output/output.component';
 
 @Component({
   selector: 'app-caesar-cipher-form',
