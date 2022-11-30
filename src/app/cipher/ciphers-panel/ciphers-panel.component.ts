@@ -8,8 +8,11 @@ import { Router } from '@angular/router';
 })
 export class CiphersPanelComponent implements OnInit {
   public someCipherIsOpen: boolean = false;
+
   public isBtn1Disable = false;
+
   public isBtn2Disable = false;
+
   public isBtn3Disable = false;
 
   constructor(private router: Router) {
