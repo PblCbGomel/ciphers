@@ -1,6 +1,8 @@
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
 
-export function ValidateInputByLanguage(control: AbstractControl) {
+export function ValidateInputByLanguage(
+  control: AbstractControl
+): ValidationErrors | null {
   const value = control.value;
   if (localStorage.getItem('lang') === 'en-US') {
     return !/^[A-Za-z0-9 .,?!-/@()]*$/.test(value)
