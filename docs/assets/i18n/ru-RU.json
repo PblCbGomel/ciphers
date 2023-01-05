@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "language": {
+      "language": "Язык",
+      "eng": "Англ",
+      "ru": "Рус"
+    },
+    "theme": {
+      "theme": "Тема",
+      "dark": "Тёмная",
+      "light": "Светлая"
+    },
+    "close": "Закрыть"
+  },
+  "cipherPage": {
+    "choose": "Выберите шифр",
+    "morse": "Морзе",
+    "caesar": "Цезарь",
+    "transposition": "Транспозиция",
+    "shift": "Сдвиг",
+    "encrypt": "Зашифровать",
+    "descrypt": "Дешифровать",
+    "textEncrypt": "Текст для зашифровки",
+    "textDescrypt": "Текст для расшифровки",
+    "alphabet": "Алфавит"
+  },
+  "welcomePage": {
+    "welcome": "Добро пожаловать в шиферный кодировщик",
+    "start": "Начать"
+  }
+}
